@@ -1,0 +1,5 @@
+# Text files use LF on every OS.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.zip binary

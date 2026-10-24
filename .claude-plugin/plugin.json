@@ -1,0 +1,30 @@
+{
+  "name": "jobsearch",
+  "version": "1.0.0",
+  "description": "Eight skills for a job search in any field: setup, resume, correspondence (outreach, follow-up, reply, nudge, cover letter), company-research, interview-prep, track, linkedin, offer. Your facts live in a profile you own. Role packs add vocabulary and interview formats.",
+  "author": {
+    "name": "Ahmed Usmani",
+    "url": "https://github.com/au5m"
+  },
+  "homepage": "https://github.com/au5m/jobsearch-kit",
+  "repository": "https://github.com/au5m/jobsearch-kit",
+  "license": "MIT",
+  "keywords": [
+    "job-search",
+    "resume",
+    "interview",
+    "cover-letter",
+    "linkedin",
+    "career"
+  ],
+  "skills": [
+    "./skills/setup",
+    "./skills/resume",
+    "./skills/correspondence",
+    "./skills/company-research",
+    "./skills/interview-prep",
+    "./skills/track",
+    "./skills/linkedin",
+    "./skills/offer"
+  ]
+}

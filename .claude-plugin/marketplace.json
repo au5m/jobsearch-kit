@@ -1,0 +1,37 @@
+{
+  "name": "jobsearch-kit",
+  "description": "A job-search toolkit for Claude Code: resume tailoring, correspondence, company research, interview prep, tracking, LinkedIn and offers. Field-free core plus role packs.",
+  "owner": {
+    "name": "Ahmed Usmani",
+    "url": "https://github.com/au5m"
+  },
+  "plugins": [
+    {
+      "name": "jobsearch",
+      "source": "./",
+      "description": "Eight skills for a job search in any field: setup, resume, correspondence (outreach, follow-up, reply, nudge, cover letter), company-research, interview-prep, track, linkedin, offer. Your facts live in a profile you own. Role packs add vocabulary and interview formats.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "keywords": [
+        "job-search",
+        "resume",
+        "interview",
+        "cover-letter",
+        "linkedin",
+        "career"
+      ],
+      "category": "productivity",
+      "strict": false,
+      "skills": [
+        "./skills/setup",
+        "./skills/resume",
+        "./skills/correspondence",
+        "./skills/company-research",
+        "./skills/interview-prep",
+        "./skills/track",
+        "./skills/linkedin",
+        "./skills/offer"
+      ]
+    }
+  ]
+}
