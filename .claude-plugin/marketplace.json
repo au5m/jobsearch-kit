@@ -10,7 +10,7 @@
       "name": "jobsearch",
       "source": "./",
       "description": "Eight skills for a job search in any field: setup, resume, correspondence (outreach, follow-up, reply, nudge, cover letter), company-research, interview-prep, track, linkedin, offer. Your facts live in a profile you own. Role packs add vocabulary and interview formats.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "license": "MIT",
       "keywords": [
         "job-search",
@@ -20,18 +20,7 @@
         "linkedin",
         "career"
       ],
-      "category": "productivity",
-      "strict": false,
-      "skills": [
-        "./skills/setup",
-        "./skills/resume",
-        "./skills/correspondence",
-        "./skills/company-research",
-        "./skills/interview-prep",
-        "./skills/track",
-        "./skills/linkedin",
-        "./skills/offer"
-      ]
+      "category": "productivity"
     }
   ]
 }

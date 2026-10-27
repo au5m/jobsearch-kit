@@ -2,6 +2,10 @@
 
 Newest first.
 
+## 1.0.1 (2026-10-26)
+
+- Fix: the plugin failed to load with "conflicting manifests". The marketplace entry no longer lists skills or sets strict; plugin.json is the only component definition.
+
 ## 1.0.0 (2026-10-24)
 
 First release. One build, eight skills.
