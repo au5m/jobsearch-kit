@@ -2,6 +2,12 @@
 
 Newest first.
 
+## 1.0.2 (2026-10-28)
+
+- `setup`: asks for years of experience inside question 4, so the bio and `years_experience` never come from date arithmetic.
+- `setup`: leaves `location` blank when the user states none, instead of asking.
+- `setup`: says how to turn a Windows time zone name into an IANA name.
+
 ## 1.0.1 (2026-10-26)
 
 - Fix: the plugin failed to load with "conflicting manifests". The marketplace entry no longer lists skills or sets strict; plugin.json is the only component definition.

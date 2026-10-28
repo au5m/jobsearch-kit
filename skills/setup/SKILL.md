@@ -17,7 +17,7 @@ Look for `workspace.md` at the default root (`~/JobSearch`) and in the current d
 
 Get these from the system, not from the user:
 
-- Time zone: the OS setting, as an IANA name. Confirm it in one word if it looks wrong for the location they give.
+- Time zone: the OS setting, as an IANA name. Windows reports a Windows zone name; map it to the IANA name (for example, Eastern Standard Time is America/New_York). Confirm it in one word if it looks wrong for the location they give.
 - OS: macOS, Windows or Linux.
 - Today's date.
 - Which optional tools are present in this session: Google Drive tools, Gmail tools, an agent-spawning tool. Note what you find. Do not mention tools that are absent.
@@ -53,7 +53,7 @@ Read the file. Markdown, docx and pdf are all fine; use the tools the session ha
 
 Wait. Apply every correction. This table becomes `## Roster`. It is the single most important thing this skill produces: a wrong roster propagates into every resume and letter. Copy dates exactly as the resume has them. Year-only is fine if that is what the resume says.
 
-Then draft `one_line_bio` from the resume in the user's register: one sentence, present tense, what they do and for how long, using the years they state. Show it: "Here is a one-line bio for outreach and cover letters. Edit it or say yes." Wait. Set `years_experience` from what they said or confirmed, never from arithmetic on the roster.
+Then ask: "How many years of experience should I say you have? For example 8, or 12+." Set `years_experience` from the answer, never from arithmetic on the roster. Then draft `one_line_bio` from the resume in the user's register: one sentence, present tense, what they do and for how long, using that number. Show it: "Here is a one-line bio for outreach and cover letters. Edit it or say yes." Wait.
 
 Also set `attachment_name` to `First.Last.Resume` unless they say otherwise, and `master_resume` to the path they gave (copy the file into `root` if it is elsewhere and they agree).
 
@@ -62,7 +62,7 @@ Also set `attachment_name` to `First.Last.Resume` unless they say otherwise, and
 ## Write the files
 
 1. Create `root` if needed, plus `companies/`.
-2. Write `profile.md` from `${CLAUDE_PLUGIN_ROOT}/templates/profile.md` with every field filled. Leave `## Approved facts` and `## Constraints` with one placeholder line each and tell the user what goes there: "Approved facts: numbers and credentials you want used. Constraints: companies to avoid, non-compete terms, topics not to raise in writing."
+2. Write `profile.md` from `${CLAUDE_PLUGIN_ROOT}/templates/profile.md` with every field filled that the user gave or setup detected. If the user stated no location, leave `location` blank. Do not ask for it. Leave `## Approved facts` and `## Constraints` with one placeholder line each and tell the user what goes there: "Approved facts: numbers and credentials you want used. Constraints: companies to avoid, non-compete terms, topics not to raise in writing."
 3. Write `workspace.md` from `${CLAUDE_PLUGIN_ROOT}/templates/workspace.md`.
 4. Write `pipeline.md` from `${CLAUDE_PLUGIN_ROOT}/templates/pipeline.md` if it does not exist.
 5. If `drive_folder` is set, mirror the three files there.
