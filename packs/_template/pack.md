@@ -55,3 +55,5 @@ Avoid:
 
 Before: [a weak, responsibility-only bullet typical of this field]
 After: [the same work as an outcome bullet, with marked blanks for numbers]
+
+Keep the scope the source states. Use a stronger verb (led, owned) only when the source says so, and add an "only if the source says" line to any After that raises the scope.

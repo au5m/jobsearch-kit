@@ -11,7 +11,7 @@ The goal is a version of the user's real resume that makes the evidence for this
 
 ## Inputs
 
-1. The job description. Pasted, uploaded, or linked (fetch it).
+1. The job description. Pasted, uploaded, or linked (fetch it). If the link cannot be read (many job boards need a login), ask the user to copy the posting text and paste it.
 2. The master resume, at `workspace.master_resume`. If it is missing, say so and stop. Do not draft a resume from scratch and do not work from memory of the user.
 3. `profile.md`: roster, approved facts, constraints.
 4. The pack sections Vocabulary, Keyword families and Examples for the user's role family.
@@ -53,17 +53,33 @@ Run the pass in `${CLAUDE_PLUGIN_ROOT}/references/truthfulness.md`, as a named s
 
 ## Step 5: Output
 
-Plain text first. Build a file only when the user says yes.
+Plain text first, for review. Then offer the file the user can upload.
 
-1. The tailored resume in markdown, in chat or as a `.md` file at `<companies_dir>/<Company>/YYYY-MM-DD_Resume_<Company>.md`. Ask which.
+1. The tailored resume in markdown, in chat, for review.
 2. A short summary, not a report:
    - The role's center of gravity, one line.
    - What changed, three to five lines.
    - Coverage: which must-haves are strong, partial, gap.
    - Questions: the facts that would strengthen it, each tied to a line or a requirement.
    - Roster pass result.
+   - Parse check result (below), one line if it passes.
+3. End with one plain question: "Want this as a Word file you can upload?" Most applications take Word or PDF, not markdown. On yes, build it as described next. If the user wants the markdown kept too, save it as `<companies_dir>/<Company>/YYYY-MM-DD_Resume_<Company>.md`.
 
-If the user then asks for a file in the master's format: if the master is a `.docx`, copy it and edit the copy so fonts, layout and spacing are preserved; if the master is a PDF or text, build a plain, single-column `.docx` and say that it does not match any template. Use the document tools the session has. Open the result and check every page before delivering. Name it `YYYY-MM-DD_Resume_<Company>.docx` in the company folder. The design belongs to the user's master; do not impose one.
+### Parse check
+
+Applicant tracking systems read the file before a person does. Check the tailored version, and warn the user in one line for each item that fails, naming what to change:
+
+- One column. No tables, text boxes or columns for the main content.
+- Contact details in the body, not only in a header or footer.
+- Standard section headings: Experience, Education, Skills (or the plain equivalents).
+- Each key acronym from the posting written out once in full, for example "applicant tracking system (ATS)".
+- Word format unless the posting asks for PDF.
+
+If the master's own layout fails an item, say so once. Do not change the layout without the user's yes.
+
+### Building the file
+
+If the user wants a file in the master's format: if the master is a `.docx`, copy it and edit the copy so fonts, layout and spacing are preserved; if the master is a PDF or text, build a plain, single-column `.docx` and say that it does not match any template. Use the document tools the session has. Open the result and check every page before delivering. Name it `YYYY-MM-DD_Resume_<Company>.docx` in the company folder. The design belongs to the user's master; do not impose one.
 
 Do not pad the summary with advice on applying or interviewing unless asked. Offer in one line to log the application through `track`.
 

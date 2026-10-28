@@ -5,7 +5,7 @@ description: Works a job offer with you: lays out the components in a table, com
 
 # Offer
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/loading.md` first and load the user's context in that order. Read the company README and any `Research` file for the company. Read `${CLAUDE_PLUGIN_ROOT}/references/drafting-modes.md`: the counter message is correspondence; the comp table and brief are documents.
+Read `${CLAUDE_PLUGIN_ROOT}/references/loading.md` first and load the user's context in that order. Read the company README and any `Research` file for the company. Read `${CLAUDE_PLUGIN_ROOT}/references/drafting-modes.md`: the counter message is correspondence; the comp table and brief are documents. Read `${CLAUDE_PLUGIN_ROOT}/references/truthfulness.md` and `${CLAUDE_PLUGIN_ROOT}/references/hard-rules.md`: every claim about the user comes from the profile, the master resume, or what they say here.
 
 The user decides. This skill lays out the numbers, the levers and the questions, and drafts the message they choose to send. It does not tell them what to accept. It is not legal, tax or financial advice, and it says so once when the table is first shown.
 
@@ -65,8 +65,8 @@ Run the review loop (`${CLAUDE_PLUGIN_ROOT}/references/review-loop.md`, decision
 
 Ask who the user has in mind. For each: name, relationship, what they can speak to, last time in touch. Then draft:
 
-- A short note to each reference (correspondence mode): thanks for being willing, the company and role in one line, the two things the user would like them to speak to, when to expect the call, and a plain offer to send the posting.
-- A one-page brief for the user's own use (documents mode): per reference, what they are likely to say, any gap to prepare them for, and what to ask them to emphasize. No scripts for the reference; references speak for themselves.
+- A short note to each reference (correspondence mode): thanks for being willing, the company and role in one line, the two things the user would like them to speak to, when to expect the call, and a plain offer to send the posting. The two things come from the roster or approved facts. Run the pre-send check on each note.
+- A one-page brief for the user's own use (documents mode): per reference, what the user says this person can speak to, any gap the user names, and what to ask them to emphasize. Do not guess what a reference will say. No scripts for the reference; references speak for themselves.
 
 ## Step 6: Before accepting
 

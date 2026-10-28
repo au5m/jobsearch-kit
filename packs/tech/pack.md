@@ -169,13 +169,16 @@ Recruiter screen (fit and logistics), hiring-manager conversation (motivation an
 
 ### role: default
 
+Every After below keeps the scope the source states. A stronger verb (led, owned, migrated) is used only if the source says the candidate did that. Blanks hold numbers the source points to; they never add an activity the source does not name.
+
 Before: Worked on the migration of the reporting system to the cloud.
-After: Migrated the reporting system to [cloud platform] for [# of] internal users, cutting monthly infrastructure cost by [%] and report latency from [minutes] to [seconds].
+After, only if the source says the candidate ran the migration: Migrated the reporting system to [cloud platform] for [# of] internal users, cutting monthly infrastructure cost by [%].
+If the source shows team work: Contributed to the reporting system's move to [cloud platform], building [component] that [outcome].
 
 ### role: sales engineer
 
 Before: Responsible for technical sales activities for enterprise accounts in the region.
-After: Ran technical evaluations for [#] enterprise accounts across [region], winning [X of Y] proofs of value against [competitor category].
+After, only if the source says the candidate ran the evaluations: Ran technical evaluations for [#] enterprise accounts across [region], winning [X of Y] proofs of value against [competitor category].
 
 Before: Helped customers with deployments of the platform.
 After, only if the source says the candidate led them: Led proof-of-value deployments for [#] prospects in [segment].
@@ -184,9 +187,12 @@ If the source only says "helped," keep "Supported."
 ### role: software engineer
 
 Before: Worked on backend services for the payments team.
-After: Decomposed the payments monolith into [#] services on [platform], cutting p99 checkout latency from [ms] to [ms] and deploy time from [hours] to [minutes].
+After: Built [service or component] for the payments team on [platform], cutting p99 checkout latency from [ms] to [ms].
+Only if the source says the candidate led it: Led the split of the payments monolith into [#] services.
+If the source shows team work, keep it: Contributed to [project], building [component] that [outcome].
 
 ### role: product manager
 
 Before: Managed the roadmap for the onboarding product.
-After: Owned onboarding for [segment], shipping [#] releases in [period] that raised week-one activation from [%] to [%] and cut setup-related support tickets by [%].
+After, only if the source says the candidate owned the product: Owned onboarding for [segment], shipping [#] releases in [period] that raised week-one activation from [%] to [%] and cut setup-related support tickets by [%].
+If the source only says "managed the roadmap," keep that scope: Managed the onboarding roadmap, shipping [#] releases in [period].

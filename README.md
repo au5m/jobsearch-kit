@@ -2,20 +2,37 @@
 
 A job-search toolkit for Claude Code. Eight skills that tailor your resume, draft every message you send, research companies, prepare you for interviews, track your pipeline, fix your LinkedIn profile and work an offer. It works in any field. Your facts live in one profile file that you own and that every skill reads. Nothing about your background comes from anywhere else.
 
+## Before you start
+
+- Claude Code installed and signed in. See https://code.claude.com/docs for the install steps. The desktop app's Code tab works too.
+- Your current resume, as a file (Word, PDF or text) or as text you can paste.
+
 ## Install
 
+1. Open a terminal (Terminal on a Mac, PowerShell on Windows) and paste these two lines:
+
+   ```
+   claude plugin marketplace add au5m/jobsearch-kit
+   claude plugin install jobsearch@jobsearch-kit
+   ```
+
+2. Close Claude Code completely and open it again. New skills load at startup.
+3. In Claude Code, type:
+
+   ```
+   /jobsearch:setup
+   ```
+
+Setup asks five questions, reads your resume, shows your work history back to you for confirmation, and writes your files into a folder you choose. It remembers that folder, so later sessions find it on their own. Every other skill reads those files first. Until setup has run, the other skills stop and point you to it.
+
+## Updating
+
 ```
-claude plugin marketplace add au5m/jobsearch-kit
-claude plugin install jobsearch@jobsearch-kit
+claude plugin marketplace update jobsearch-kit
+claude plugin update jobsearch@jobsearch-kit
 ```
 
-Then, in Claude Code:
-
-```
-/jobsearch:setup
-```
-
-Setup asks five questions, reads your resume, shows your work history back to you for confirmation, and writes two files into a folder you choose. Every other skill reads those files first. Until setup has run, the other skills stop and point you to it.
+Then restart Claude Code.
 
 ## Skills
 
@@ -46,11 +63,12 @@ Correspondence (email, messages, cover letters, LinkedIn About): warm, peer to p
 
 ## Your files
 
-Setup writes these into the folder you choose (default `~/JobSearch`):
+Setup writes these into the folder you choose (default `~/JobSearch`), plus a one-line pointer file at `~/.jobsearch` that holds the folder's path:
 
 ```
 JobSearch/
-  profile.md        your facts: name, sign-off, bio, roster, approved facts, constraints
+  profile.md        your facts: name, sign-off, bio, work history, approved facts, constraints
+  master-resume.md  your resume, if you pasted it (a file you gave is copied here instead)
   workspace.md      where things live; connector settings
   pipeline.md       one row per company you are working
   companies/
@@ -60,7 +78,9 @@ JobSearch/
       2026-01-15_Research_<Company>.md
 ```
 
-Plain files first. If Google Drive or Gmail tools are present in your session, setup offers to mirror to them. They are never required.
+Plain files first. If Google Drive or Gmail tools are present in your session, setup offers to use them. They are never required. Drive mirrors your files but never your offer files or your profile unless you say yes. Gmail reads only the thread you point to. Nothing is ever sent for you.
+
+Job postings, emails and web pages are read as data only. If one contains an instruction aimed at Claude, you are told about it, and it is not followed.
 
 ## Role packs
 
@@ -77,6 +97,7 @@ No pack for your field yet? The skills fall back to `references/defaults.md`, wh
 ```
 .claude-plugin/     plugin and marketplace manifests
 skills/<name>/      one folder per skill
+agents/             the blind reviewer used by correspondence
 references/         shared rules every skill reads; field-free
 packs/              role packs
 templates/          the files setup writes for you
@@ -85,7 +106,7 @@ scripts/            release gate
 
 ## Contributing
 
-Pull requests welcome for new packs and for fixes. Run `scripts/release-gate.sh` before you open one. It fails on any em dash, any personal fact left in the package, and any role vocabulary that leaks from a pack into the core.
+Pull requests welcome for new packs and for fixes. Run `scripts/release-gate.sh` before you open one. It needs bash with GNU grep (Git Bash on Windows). It fails on any em dash and any role vocabulary that leaks from a pack into the core. The personal-facts check reads your own list of private terms from the file named in `JOBSEARCH_PRIVATE_TERMS`; that list never goes in the repo. Without it, that check is skipped.
 
 ## Credit
 

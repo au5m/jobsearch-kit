@@ -99,7 +99,7 @@ Following up on my note from [day]. [One sentence restating the ask.] Any of the
 [profile.first_name]
 ```
 
-No apology for following up. No "I know you are busy." Wait two or three days before the first nudge. Two or three nudges is normal. Silence is not a no.
+No apology for following up. No "I know you are busy." Cold outreach: wait 5 to 7 business days before the first nudge, send at most 2 nudges, then stop. After an interview: wait until the timeline they gave plus 2 business days; with no timeline, wait 1 week. When someone is waiting on the user, the user replies within 1 business day. Silence is not a no.
 
 ## Cover letter: hook on them, bridge, two proofs, ask
 

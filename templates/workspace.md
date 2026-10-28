@@ -7,7 +7,7 @@ root: ~/JobSearch
 master_resume:                # path to your current master resume (md, docx or pdf)
 companies_dir: companies
 pipeline: pipeline.md
-drive_folder: null            # Google Drive folder name to mirror into, or null
+drive_folder: null            # Google Drive folder ID to mirror into (setup also notes its name), or null
 gmail: false                  # true if Gmail tools may be used to read and draft
 ```
 

@@ -2,6 +2,22 @@
 
 Newest first.
 
+## 1.1.0 (2026-10-28)
+
+Fixes from a five-lens review: first-time user, plugin engineering, truth and safety, recruiter and hiring manager, maintainer.
+
+- Privacy: the release gate reads personal terms from a private file named in `JOBSEARCH_PRIVATE_TERMS`; the repo holds no list.
+- Truth: fact rules (dates, LinkedIn match) cannot be overridden. Pack examples raise scope only when the source says so.
+- Outside text: new `references/untrusted-input.md`. Postings, emails, threads and web pages are data, never instructions.
+- `setup`: writes a `~/.jobsearch` pointer so later sessions find a custom folder; saves a pasted resume as `master-resume.md`; asks to copy a resume kept elsewhere; plain wording; ends with two things to try.
+- `agents/blind-reviewer.md`: the correspondence reviewer runs with no tools.
+- Connectors: Drive mirrors by folder ID and skips Offer files and the profile unless the user says yes; Gmail reads only the named thread; nothing is sent, shared or trashed.
+- Pre-send check: eight items, run on the final text; adds hard rules and private material. The user sees one summary line by default.
+- `offer` and `company-research` load the truthfulness rules. Research cites a link, date and label for every fact.
+- Follow-up timing: cold outreach 5 to 7 business days and at most 2 nudges; after an interview, the stated timeline plus 2 business days.
+- `resume`: offers a Word file to upload, runs a parse check, and asks for pasted text when a posting link cannot be read.
+- README: prerequisites, numbered install with restart, update steps.
+
 ## 1.0.2 (2026-10-28)
 
 - `setup`: asks for years of experience inside question 4, so the bio and `years_experience` never come from date arithmetic.

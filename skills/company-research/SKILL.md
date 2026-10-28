@@ -5,7 +5,7 @@ description: Researches a company you are considering applying to, interviewing 
 
 # Company research
 
-Read `${CLAUDE_PLUGIN_ROOT}/references/loading.md` first and load the user's context in that order. Load the pack's Role lens section for the user's role family (or `${CLAUDE_PLUGIN_ROOT}/references/defaults.md`). Read `pipeline.md` and the company README if one exists.
+Read `${CLAUDE_PLUGIN_ROOT}/references/loading.md` first and load the user's context in that order. Load the pack's Role lens section for the user's role family (or `${CLAUDE_PLUGIN_ROOT}/references/defaults.md`). Read `${CLAUDE_PLUGIN_ROOT}/references/truthfulness.md`. Read `pipeline.md` and the company README if one exists.
 
 The user evaluates companies as a candidate, not an investor. The question is whether this is a good place to do the work they want to do and build a career, and when to make a move. Weight everything toward the user's role as described in the Role lens.
 
@@ -15,6 +15,7 @@ The user evaluates companies as a candidate, not an investor. The question is wh
 - Search before answering. Funding, leadership, customers, headcount and roles change constantly. Run separate searches per dimension rather than one broad query.
 - Classify the stage early. The stage decides which sections matter.
 - Rank sources. Trust in this order: company announcements and filings, established trade and business press, investor posts, then aggregators and directories. Label any fact that rests only on an aggregator. Mark vendor claims from a press release as marketing.
+- Cite every fact: the link, the date of the source, and a label (verified, aggregator only, or marketing). Later skills reuse this write-up in messages, so a fact with no source does not go in it.
 - Make the bear case as hard as the bull case. The user would rather hear the risks now than in month three.
 - Never use research about a person with the user's name as a fact about the user.
 

@@ -18,7 +18,7 @@ Set the tier before the first review.
 
 ## The loop
 
-1. Spawn a fresh reviewer agent with the prompt in `${CLAUDE_PLUGIN_ROOT}/skills/correspondence/reviewer.md`, the draft, the role facts, and the recipient's actual message, verbatim. The reviewer has not seen the drafting, the rules, or earlier versions. It returns a verdict and up to two line changes. For an option set, spawn one reviewer per option, in parallel. Each sees only its own option.
+1. Spawn a fresh reviewer with the `jobsearch:blind-reviewer` agent type, which has no tools, and give it the prompt in `${CLAUDE_PLUGIN_ROOT}/skills/correspondence/reviewer.md`, the draft, the role facts, and the recipient's actual message, verbatim, inside the outside-text markers. If that agent type is not available, use a general agent and tell it not to use any tool. The reviewer has not seen the drafting, the rules, or earlier versions. It returns a verdict and up to two line changes. For an option set, spawn one reviewer per option, in parallel. Each sees only its own option.
 2. Apply a change only if it fixes a missing move or a tone problem. Do not apply a style preference. Reject any change that adds a claim about the user's background, and flag it to the user as unverified.
 3. If you changed the draft, spawn a new fresh reviewer on the whole rewritten draft. Do not pass earlier verdicts or versions.
 4. Stop when a reviewer says send and flags no move or tone problem, or when the tier limit is reached.
@@ -30,9 +30,9 @@ Set the tier before the first review.
 ## What the user sees
 
 - The final draft in a code block, and where it goes.
-- One line per review: the verdict and what changed.
-- One line for each suggestion you rejected, and why.
-- The pre-send check result (`presend-check.md`).
+- One summary line, for example "Reviewed 2x, all 8 checks met."
+- Only when something needs the user: the pre-send item that is not met, a rejected suggestion that added a claim about the user, or the one question from step 7.
+- The full log (one line per review, each rejected suggestion and why, all eight check lines) only when the user asks for it.
 
 ## Timing
 

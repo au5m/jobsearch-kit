@@ -25,7 +25,7 @@ Get today's date from the system before any write.
 
 **What is stale.** Flag:
 - A follow-up not sent within 24 hours of a conversation (a Timeline "call held" or "round completed" with no "message sent" after it in a day).
-- A message sent with no reply and no nudge after three days.
+- A message sent with no reply, past the nudge timing in `${CLAUDE_PLUGIN_ROOT}/references/hard-rules.md` rule 8 (cold outreach: 5 to 7 business days; after an interview: the timeline they gave plus 2 business days, or 1 week).
 - A pipeline row with Owner "them" and Last contact more than 10 days ago.
 - A pipeline row with Owner "me" and no Next step.
 
@@ -47,5 +47,5 @@ Update the README `## Notes` with one line pointing to the handoff. Tell the use
 - Never remove a Timeline line. Correct it with a new dated line.
 - Never write comp figures here. Those go in the offer file only, and only when the user chooses.
 - Never write anything from `${CLAUDE_PLUGIN_ROOT}/references/workspace-layout.md`'s "what never goes in these files" list.
-- When `workspace.drive_folder` is set and Drive tools are present, mirror each written file after the local write. Say so in three words. When the tools are absent, say nothing about Drive.
-- Plain text before a file is created for the first time; after that, log without asking, since the user asked you to.
+- When `workspace.drive_folder` is set and Drive tools are present, mirror each written file after the local write, by the stored folder ID. Say so in three words. Never mirror an Offer file unless the user says yes for that file. When the tools are absent, say nothing about Drive.
+- Plain text before a file is created for the first time; after that, log without asking, since the user asked you to. The exception: a note that records what another person said or a concern about the user. Show that line and ask before writing it.
